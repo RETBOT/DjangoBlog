@@ -1,0 +1,38 @@
+<!-- plantillas/lista_publicaciones.html -->
+{% extends 'base.html' %}
+
+{% block title %} - Publicaciones {% endblock title %}
+
+{% block content %}
+<br>
+<div class="jumbotron p-md-2 text-white rounded bg-dark">
+  <h1 class="display-4 font-italic text-center">Publicaciones</h1>
+</div>
+
+{% for pub in object_list %}
+
+<div class="col-md-12">
+  <div class="card flex-md-row mb-3 box-shadow h-md-270">
+    <div class="card-body d-flex flex-column align-items-center">
+      <strong class="d-inline-block mb-2 text-primary">Autor: {{ pub.autor }}</strong>
+      <h3 class="mb-0">
+        <a class="text-dark" href="{% url 'detalle_publicacion' pub.pk %}">{{ pub.titulo }} </a>
+      </h3>
+      <p class="card-text mb-auto">{{ pub.cuerpo }} </a>
+    </div>
+  </div>
+  <div class="card-footer">
+    <h4>Comentarios</h4>
+    {% for comentario in pub.comentarios.all %}
+    <a class="text-dark" href="{% url 'comentar_publicacion' comentario.pk %}">Comentar</a>
+    <p>
+      <span class="font-weight-bold">{{ comentario.autor }} &middot;</span>
+      {{ comentario }} 
+    </p>
+    <br>
+    {% endfor %}
+  </div>
+</div>
+
+{% endfor %}
+{% endblock content %}

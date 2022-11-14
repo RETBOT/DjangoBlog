@@ -1,0 +1,18 @@
+<!-- plantillas/inicio.html -->
+{% extends 'base.html' %}
+
+{% block title%}- Inicio{% endblock title%}
+
+{% block content %}
+<main role="main" class="container">
+  <h1 class="display-4">Blog Django</h1>
+  <div class="jumbotron">
+    <p class="lead">Un blog hecho con Django.</p>
+    <p class="lead">
+      <a class="btn btn-lg btn-primary" 
+      href="{% url 'lista_publicaciones' %}" 
+      role="button">Entrar</a>
+    </p>
+  </div>
+</main>
+{% endblock content %}

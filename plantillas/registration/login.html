@@ -1,0 +1,20 @@
+<!-- plantillas/registration/login.html -->
+{% extends 'base.html' %}{% load crispy_forms_tags %}
+{% block title %}- Acceso{% endblock title %}
+
+{% block content %}
+<h1>Bienvenido</h1>
+    
+    <div class="registro">
+        <div class="registro_contenido">
+            <h2>Iniciar Sesión</h2><br>
+    <form method="post"> {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-success ml-2" type="submit" value="Acceder (Iniciar Sesión)" style="color: black;">
+    </form>
+    <br>
+    <center><a href="{% url 'password_reset' %}" type="button" class="formulario__submit" style="color: black;">¿Olvido su contraseña?</a></center>
+    
+</div>
+</div>
+{% endblock content %}

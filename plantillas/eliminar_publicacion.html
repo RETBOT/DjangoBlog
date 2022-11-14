@@ -1,0 +1,12 @@
+<!-- plantillas/eliminar_publicaciones.html -->
+{% extends 'base.html' %}
+
+{% block title %} - Eliminar Publicación{% endblock title %}
+
+{% block content %}
+    <h1>Eliminar articulo</h1>
+    <form action="" method="post">{% csrf_token %}
+        <p>¿Está completamente seguro de que desea eliminar "{{ publicacion.titulo }}" ? </p>
+        <input class="btn btn-danger ml-2" type="submit" value="Confirmar eliminarción" style="color: black;">        
+    </form>
+{% endblock content %}

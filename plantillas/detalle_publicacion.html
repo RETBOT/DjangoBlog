@@ -1,0 +1,31 @@
+<!-- plantillas/detalle_publicacion.html -->
+{% extends 'base.html' %}
+
+{% block title %} - Detalle Publicacion{% endblock title %}
+
+{% block content %}
+<br>
+<div class="card">
+  <div class="card-header">
+    <div class="jumbotron p-md-2 text-white rounded bg-dark">
+      <h1 class="display-4 font-italic text-center">{{ pub.titulo }}</h1>
+    </div>
+    <span class="text-muted">Creado por {{ pub.autor }}</span>
+  </div>
+  <div class="card-body">
+    {{ pub.cuerpo }}
+  </div>
+  {% if pub.imagen.url != null %}
+  <center>
+    <img class="card-img-right flex-auto d-none d-md-block figure-img" width="400" height="300"
+      src="{{ pub.imagen.url }}" alt="Imagen blog">
+  </center>
+  {% endif %}
+</div>
+
+<div class="card-footer text-center text-muted">
+  <a href="{% url 'editar_publicacion' pub.pk %}">Editar</a> |
+  <a href="{% url 'eliminar_publicacion' pub.pk %}">Eliminar</a> |
+  <a href="{% url 'lista_publicaciones' %}">Volver a Publicaciones</a>
+</div>
+{% endblock content %}
