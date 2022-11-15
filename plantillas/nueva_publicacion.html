@@ -1,5 +1,5 @@
 <!--planillas/nueva_publicacion.html -->
-{% extends 'base.html' %}{% load crispy_forms_tags %}
+{% extends 'base.html' %}
 
 {% block title %} - Nueva Publicacion {% endblock title %}
 
@@ -7,7 +7,7 @@
 <div class="form-group">
   <h1>Nueva Publicacion</h1>
   <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
-      {{ form|crispy }}
+      {{ form.as_p }}
       <input class="btn btn-success" type="submit" value="Guardar cambios" style="color: black;">
   </form>
 </div>
