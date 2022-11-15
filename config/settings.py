@@ -148,3 +148,7 @@ EMAIL_HOST_USER = 'blogdjango4@gmail.com'
 EMAIL_HOST_PASSWORD = 'fiklgagytwgevavg'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'blogdjango4@gmail.com'
+
+
+import django_heroku
+django_heroku.settings(locals())
