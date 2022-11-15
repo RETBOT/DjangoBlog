@@ -21,17 +21,6 @@
       <p class="card-text mb-auto">{{ pub.cuerpo }} </a>
     </div>
   </div>
-  <div class="card-footer">
-    <h4>Comentarios</h4>
-    {% for comentario in pub.comentarios.all %}
-    <a class="text-dark" href="{% url 'comentar_publicacion' comentario.pk %}">Comentar</a>
-    <p>
-      <span class="font-weight-bold">{{ comentario.autor }} &middot;</span>
-      {{ comentario }} 
-    </p>
-    <br>
-    {% endfor %}
-  </div>
 </div>
 
 {% endfor %}
