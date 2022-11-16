@@ -1,5 +1,5 @@
 <!-- plantillas/registration/login.html -->
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load crispy_forms_tags %}
 {% block title %}- Acceso{% endblock title %}
 
 {% block content %}
@@ -9,7 +9,7 @@
         <div class="registro_contenido">
             <h2>Iniciar Sesión</h2><br>
     <form method="post"> {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input class="btn btn-success ml-2" type="submit" value="Acceder (Iniciar Sesión)" style="color: black;">
     </form>
     <br>

@@ -1,5 +1,5 @@
 <!-- plantillas/registration/signup.html -->
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load crispy_forms_tags %}
 {% block title %}-Registro{% endblock title %} 
 
 {% block content %}
@@ -7,7 +7,7 @@
 <div class="registro">
     <div class="registro_contenido">
     <form method="post">{% csrf_token %} 
-      {{ form.as_p }}
+      {{ form|crispy }}
       <input class="btn btn-success ml-2" type="submit" value="Registro" style="color: black;">
     </form>
 </div>
